@@ -1,0 +1,19 @@
+<section class="panel client-panel" id="projectReview" aria-labelledby="reviewHeading">
+<span class="badge">ВАШ ОБЪЕКТ → ИНЖЕНЕРНАЯ ПРОВЕРКА</span>
+<h2 id="reviewHeading">Нужна проверка крепления вашей выработки?</h2>
+<p>Передайте этот расчёт Эдуарду: проверка исходных данных, применимости решения и объёма дальнейших работ.</p>
+<p id="nextStep" class="notice"></p>
+<div class="fields no-print">
+<div class="field full"><label for="caseType">Какие данные использованы?</label><select id="caseType"><option value="demo">Учебный пример</option><option value="project">Данные моего объекта</option></select></div>
+<div class="field"><label for="objectName">Объект / участок (необязательно)</label><input id="objectName" type="text" maxlength="100" placeholder="Например: штрек горизонта +250 м"></div>
+<div class="field"><label for="country">Страна / юрисдикция (необязательно)</label><input id="country" type="text" maxlength="100" placeholder="Укажите страну проекта"></div>
+<div class="field full"><label for="clientTask">Что требуется проверить? (необязательно)</label><input id="clientTask" type="text" maxlength="350" placeholder="Например: проверить действующую крепь и сравнить варианты"></div>
+</div>
+<p id="caseSummary" class="stamp"></p>
+<details class="no-print" id="requestPreview"><summary>Проверить и изменить текст запроса</summary><label for="requestText" class="sub">В запрос включены исходные данные, результаты и ограничения. После изменения карточки или пересчёта текст формируется заново.</label><textarea id="requestText" rows="13" maxlength="12000" spellcheck="false"></textarea><button id="copyRequest" class="secondary" type="button">Скопировать запрос</button></details>
+<div class="actions no-print"><a id="sendCalculation" class="cta">Отправить мой расчёт</a><a id="whatsappCalculation" class="cta whatsapp" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a><button id="downloadReport" type="button">Скачать предварительный отчёт</button></div>
+<p class="sub no-print">Email откроет вашу почтовую программу; WhatsApp — чат с Эдуардом. Запрос отправите вы. Отчёт скачивается в HTML и открывается без регистрации; его можно сохранить в PDF через печать.</p>
+<p class="sub">Возможные материалы для проверки: сечение выработки, геологическое картирование и действующий паспорт крепления. По запросу согласуем перечень данных, объём работ и стоимость.</p>
+<p class="sub">Eduard Kharitonov · Mining Engineer / Geomechanics Specialist<br>Tbilisi, Georgia · доступен для удалённого международного консалтинга и проектной работы</p>
+<p id="copyStatus" class="sub" role="status" aria-live="polite"></p>
+</section>
