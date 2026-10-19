@@ -45,7 +45,9 @@ nav='<a href="underground-support.html">Крепление выработок</a
 html=html.replace('<a href="mailto:eduard@ugmineplanner.com">',nav+'<a href="mailto:eduard@ugmineplanner.com">')
 import re
 html=re.sub(r'<section class="contact">.*?</section>','',html,flags=re.S)
-html=html.replace('версия 1.0, 19.10.2026','версия 1.1, 19.10.2026')
+html=html.replace('версия 1.0, 19.10.2026','версия 1.2, 19.10.2026')
+html=html.replace('<main>', '<div class="nav language-switch" aria-label="Язык страницы"><span aria-current="page">Русский</span><a href="underground-support-en.html" lang="en" hreflang="en">English</a><span class="sub">Смена языка открывает учебный пример.</span></div><main>',1)
+html=html.replace('</head>','<link rel="alternate" hreflang="ru" href="https://gornyak0505-pixel.github.io/geomechanics-demo/underground-support.html"><link rel="alternate" hreflang="en" href="https://gornyak0505-pixel.github.io/geomechanics-demo/underground-support-en.html"></head>',1)
 (outroot/'underground-support.html').write_text(html)
 for name in ['stope-economics.html','dump-stability.html']:
  p=outroot/name;s=p.read_text();p.write_text(s.replace('<a href="mailto:eduard@ugmineplanner.com">',nav+'<a href="mailto:eduard@ugmineplanner.com">'))

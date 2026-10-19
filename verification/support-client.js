@@ -10,7 +10,7 @@ function costDifference(r){const a=r.options[0],b=r.options[1],gap=Math.abs(a.co
 function requestText(){
  const {p,r}=current,c=clientInfo(),d=costDifference(r);
  const num=(v,n=2)=>f(v,n);
- const lines=['Эдуард, прошу обсудить проверку крепления горной выработки.',
+ const lines=['Источник обращения: UG-SUPPORT-RU.', 'Эдуард, прошу обсудить проверку крепления горной выработки.',
  'Источник данных: '+c.kind+'.',
  'Объект: '+(c.object||'не указан')+'. Страна / юрисдикция: '+(c.country||'не указана')+'.',
  'Задача: '+(c.task||'проверить достаточность крепи и сравнить варианты')+'.',
@@ -29,7 +29,7 @@ function requestText(){
  'Инструмент: https://gornyak0505-pixel.github.io/geomechanics-demo/underground-support.html');
  return lines.join('\n');
 }
-function updateContactLinks(){if(!current)return;const text=$('requestText').value,object=clientInfo().object;$('sendCalculation').href='mailto:eduard@ugmineplanner.com?subject='+encodeURIComponent('Проверка крепления: '+(object||'горная выработка'))+'&body='+encodeURIComponent(text);$('whatsappCalculation').href='https://wa.me/380675397500?text='+encodeURIComponent(text);$('copyStatus').textContent='';}
+function updateContactLinks(){if(!current)return;const text='[UG-SUPPORT-RU]\n'+$('requestText').value,object=clientInfo().object;$('sendCalculation').href='mailto:eduard@ugmineplanner.com?subject='+encodeURIComponent('[UG Support RU] Проверка крепления: '+(object||'горная выработка'))+'&body='+encodeURIComponent(text);$('whatsappCalculation').href='https://wa.me/380675397500?text='+encodeURIComponent(text);$('copyStatus').textContent='';}
 function updateClientCard(){if(!current)return;const c=clientInfo();$('caseSummary').textContent=c.kind+' · '+(c.object||'Объект пока не указан')+' · '+(c.country||'Юрисдикция не указана');$('requestText').value=requestText();updateContactLinks();}
 function renderClientFlow(){
  if(!current)return;const {p,r}=current,d=costDifference(r);
