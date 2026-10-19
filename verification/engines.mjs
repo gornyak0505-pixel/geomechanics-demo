@@ -3,8 +3,8 @@ export function economics(p){
  for(const [k,v] of Object.entries(p))if(typeof v==='number'&&!Number.isFinite(v))throw Error('Некорректное число: '+k);
  for(const k of ['length','width','height','density','wasteDensity','price'])if(!(p[k]>0))throw Error('Требуется '+k+' > 0');
  for(const k of ['grade','mining','processing','backfill','devLength','devRate','fixed'])if(!(p[k]>=0))throw Error('Требуется '+k+' ≥ 0');
- for(const k of ['loss','dilution'])if(!(p[k]>=0&&p[k]<100))throw Error(k+': требуется 0 ≤ значение < 100%');
- for(const k of ['recovery','payability'])if(!(p[k]>0&&p[k]<=100))throw Error(k+': требуется 0 < значение ≤ 100%');
+ for(const k of ['loss','dilution'])if(!(p[k]>=0&&p[k]<100))throw Error((k==='loss'?'Потери':'Разубоживание')+': требуется 0 ≤ значение < 100%');
+ for(const k of ['recovery','payability'])if(!(p[k]>0&&p[k]<=100))throw Error((k==='recovery'?'Извлечение':'Оплата металла')+': требуется 0 < значение ≤ 100%');
  if(!['Au','Cu'].includes(p.metal))throw Error('Неизвестный металл');
  if(p.metal==='Cu'&&p.grade>100)throw Error('Содержание Cu не может превышать 100%');
  if(Math.max(p.length,p.width,p.height)>10000||Math.max(p.density,p.wasteDensity)>30||Math.max(p.grade,p.price,p.mining,p.processing,p.backfill,p.devLength,p.devRate,p.fixed)>1e10)throw Error('Параметры превышают диапазон демонстрационной модели');
