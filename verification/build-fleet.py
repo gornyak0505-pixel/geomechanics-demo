@@ -27,8 +27,9 @@ output='''<section class="panel"><span class="badge">OPEN PIT FLEET / MATERIAL �
 engine=(root/'fleet-engine.mjs').read_text().replace('export const','const').replace('export function','function')
 js=engine+'\n'+(root/'fleet-ui.js').read_text()
 base.common_js=base.common_js.replace('f(x,0)','f(x,2)')
-base.common_css+='''.fleet-sticky{position:sticky;top:0;background:white;padding:6px 0;z-index:2}.fleet-cycle{display:flex;flex-wrap:wrap;gap:8px}.fleet-cycle div{flex:1;min-width:120px;border-top:4px solid #147d9c;background:#f3f7f7;padding:12px}.fleet-cycle b{display:block;font-size:20px}.fleet-cycle span{font-size:11px}#fleetContact{scroll-margin-top:16px}@media print{.fleet-sticky,#fleetContact input,#fleetContact select,#fleetContact details,#fleetContact .actions{display:none!important}}'''
+base.common_css+='''html{scroll-behavior:auto}.fleet-sticky{position:sticky;top:0;background:white;padding:6px 0;z-index:2}.fleet-cycle{display:flex;flex-wrap:wrap;gap:8px}.fleet-cycle div{flex:1;min-width:120px;border-top:4px solid #147d9c;background:#f3f7f7;padding:12px}.fleet-cycle b{display:block;font-size:20px}.fleet-cycle span{font-size:11px}#fleetContact{scroll-margin-top:16px}@media print{.fleet-sticky,#fleetContact input,#fleetContact select,#fleetContact details,#fleetContact .actions{display:none!important}}'''
 html=base.wrap('Парк техники карьера','04 / OPEN PIT EQUIPMENT','Экскаваторы, автосамосвалы, бульдозеры и буровые станки: производительность, согласование парка, CAPEX и затраты на тонну.',controls,output,js)
+html=html.replace('<a href="mailto:eduard@ugmineplanner.com">','<a href="underground-support.html">Крепление выработок</a><a href="mailto:eduard@ugmineplanner.com">')
 html=re.sub(r'<section class="contact">.*?</section>','',html,flags=re.S).replace('версия 1.0, 19.10.2026','версия 1.0, 19.10.2026')
 (outroot/'open-pit-fleet.html').write_text(html)
 nav='<a href="open-pit-fleet.html">Техника карьера</a>'
