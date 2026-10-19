@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "independent_method": "Python scalar material balance and scipy brentq root solver",
+  "stope_margin_USD": 2206839.4645253476,
+  "critical_circle_FoS": 1.0025907897369042,
+  "critical_circle_difference": -3.0546920548601975e-10,
+  "published_slices_independent_FoS": [
+    2.1129426616473945,
+    1.5551964325463803
+  ],
+  "limits": "Benchmark verifies the slice solver. Critical surface search is bounded; not a certified design analysis."
+}
